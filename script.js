@@ -1,3 +1,4 @@
+// naming question
 const quizData = [
   {
     question: "What does CSS stand for?",
@@ -34,7 +35,7 @@ const quizData = [
 
 
 ];
-
+// setting constants to grab from html
 const quiz = document.getElementById('quiz')
 const answerEls = document.querySelectorAll('.answer')
 const questionEl = document.getElementById('question')
@@ -48,14 +49,16 @@ const startBtn = document.getElementById(`start`)
 const timer = document.getElementById(`timer`)
 const timeCounter = document.getElementById(`timeCounter`)
 
+// set variables 
 let currentQuiz = 0
 let score = 0
 let count = 75
 
 
-
+// start button to load questions and timer
 startBtn.addEventListener(`click`, () => {
   startBtn.classList.add(`hide`)
+  command.classList.add(`hide`)
   questionContainer.classList.remove(`hide`)
   submit.classList.remove(`hide`)
   timeCounter.classList.remove(`hide`)
@@ -63,8 +66,8 @@ startBtn.addEventListener(`click`, () => {
   gameTime()
 
 })
+// Functiopn to start timer 
 function gameTime() {
-
   var timeinterval = setInterval(function () {
     timer.innerText = count
     count--;
@@ -74,7 +77,7 @@ function gameTime() {
 
 
 loadQuiz()
-
+// Questions are loaded 
 function loadQuiz() {
 
   deselectAnswers()
@@ -91,7 +94,7 @@ function loadQuiz() {
 function deselectAnswers() {
   answerEls.forEach(answerEl => answerEl.checked = false)
 }
-
+// check for correct answer
 function getSelected() {
   let answer
   answerEls.forEach(answerEl => {
@@ -102,7 +105,7 @@ function getSelected() {
   return answer
 }
 
-
+// score button function. adds to score if correct or subtracts time if incorrect
 submitBtn.addEventListener('click', () => {
   const answer = getSelected()
   if (answer) {
@@ -112,11 +115,11 @@ submitBtn.addEventListener('click', () => {
       count = count - 15
     }
     currentQuiz++
-
+// chooses question and if no more questions ends game
     if (currentQuiz < quizData.length) {
       loadQuiz()
     } else {
-      
+      // creats HTML to show score and reset game 
       quiz.innerHTML = `
            <h2>You answered ${score}/${quizData.length} questions correctly</h2>
           <h2> <input type="text" class="form-control" placeholder="Enter your initials:"
