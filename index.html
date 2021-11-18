@@ -4,31 +4,52 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./reset.css">
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./css.css">
   <title>Document</title>
 </head>
 <body>
-  <div class="container">
-    <div id="title" >
-      <h1>Javascript Quiz</h1>
-    </div>
-    <div id="questionContainer" class="hide" >
-      <div id="question" >Here is where the question goes</div>
-      <div id="answerBtns" class="btnContainer">
-        <button class="btn" id="ans1">Answer 1</button>
-        <button class="btn" id="ans2">Answer 2</button>
-        <button class="btn" id="ans3">Answer 3</button>
-        <button class="btn" id="ans4">Answer 4</button>
+  <div class="quiz-container" id="quiz">
+    <div class="quiz-header">
+      <div id="startGame">
+        <h1>Java Script Quiz</h1>
+        <h4 id="timeCounter" class="hide" >Timer : <span id="timer">75</span></h4>
+        <button id="start">Start</button>
       </div>
-    </div>
-    <div class="controls">
-      <button id="startBtn">Start</button>
-      <button id="nextBtn" class="hide" >Next Question</button>
-    </div>
+      <div id="questionContainer" class="hide">
+        
+        <h2 id="question" >Question Text</h2>
+        <ul>
+          <li>
+            <input type="radio" name="answer" id="a" class="answer">
+            <label for="a" id="a_text">Answer</label>
+          </li>
+          
+          <li>
+            <input type="radio" name="answer" id="b" class="answer">
+            <label for="b" id="b_text">Answer</label>
+          </li>
+          
+          <li>
+            <input type="radio" name="answer" id="c" class="answer">
+            <label for="c" id="c_text">Answer</label>
+          </li>
+          
+          <li>
+            <input type="radio" name="answer" id="d" class="answer">
+            <label for="d" id="d_text">Answer</label>
+          </li>
+          
+        </ul>
+      </div>
+      </div>
+  
+    <button id="submit" class="hide">Submit</button>
   
   </div>
 
-<script src="java.js"></script>
+
+
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
